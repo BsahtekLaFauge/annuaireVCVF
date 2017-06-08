@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-06-08T14:56:13Z" product-name="vfvc_annuairevfvc">
+		<header/>
+		<body>
+			<trans-unit id="nom.description">
+				<source>nom</source>
+			</trans-unit>
+			<trans-unit id="prenom.description">
+				<source>prenom</source>
+			</trans-unit>
+			<trans-unit id="telephone.description">
+				<source>telephone</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="adresse.description">
+				<source>adresse</source>
+			</trans-unit>
+			<trans-unit id="code_postal.description">
+				<source>codePostal</source>
+			</trans-unit>
+			<trans-unit id="ville.description">
+				<source>ville</source>
+			</trans-unit>
+			<trans-unit id="photo.description">
+				<source>photo</source>
+			</trans-unit>
+			<trans-unit id="presentation.description">
+				<source>presentation</source>
+			</trans-unit>
+			<trans-unit id="fonction.description">
+				<source>fonction</source>
+			</trans-unit>
+			<trans-unit id="service.description">
+				<source>service</source>
+			</trans-unit>
+			<trans-unit id="organisme.description">
+				<source>organisme</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
