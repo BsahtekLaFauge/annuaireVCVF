@@ -1,5 +1,6 @@
 <?php
-namespace VFVC\VfvcAnnuairevfvc\Controller;
+namespace VFVC\VfvcAnnuairevfvc\Domain\Repository;
+
 
 /***************************************************************
  *
@@ -28,49 +29,10 @@ namespace VFVC\VfvcAnnuairevfvc\Controller;
  ***************************************************************/
 
 /**
- * ContactController
+ * The repository for Contacts
  */
-class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ContactRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    /**
-     * contactRepository
-     *
-     * @var \VFVC\VfvcAnnuairevfvc\Domain\Repository\ContactRepository
-     * @inject
-     */
-    protected $contactRepository = NULL;
     
-    /**
-     * action list
-     *
-     * @return void
-     */
-    public function listAction()
-    {
-        $contacts = $this->contactRepository->findAll();
-        $this->view->assign('contacts', $contacts);
-    }
-    
-    /**
-     * action show
-     *
-     * @param \VFVC\VfvcAnnuairevfvc\Domain\Model\Contact $contact
-     * @return void
-     */
-    public function showAction(\VFVC\VfvcAnnuairevfvc\Domain\Model\Contact $contact)
-    {
-        $this->view->assign('contact', $contact);
-    }
-    
-    /**
-     * action search
-     *
-     * @return void
-     */
-    public function searchAction()
-    {
-        
-    }
-
 }

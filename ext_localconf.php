@@ -8,11 +8,13 @@ if (!defined('TYPO3_MODE')) {
 	'Pi1',
 	array(
 		'Contact' => 'list, show, search',
+		'Organisme' => 'list, show',
 		
 	),
 	// non-cacheable actions
 	array(
 		'Contact' => '',
+		'Organisme' => '',
 		
 	)
 );
@@ -22,11 +24,13 @@ if (!defined('TYPO3_MODE')) {
 	'Pi2',
 	array(
 		'Contact' => 'list, show, search',
+		'Organisme' => 'list, show',
 		
 	),
 	// non-cacheable actions
 	array(
 		'Contact' => '',
+		'Organisme' => '',
 		
 	)
 );
@@ -36,11 +40,13 @@ if (!defined('TYPO3_MODE')) {
 	'Pi3',
 	array(
 		'Contact' => 'list, show, search',
+		'Organisme' => 'list, show',
 		
 	),
 	// non-cacheable actions
 	array(
 		'Contact' => '',
+		'Organisme' => '',
 		
 	)
 );

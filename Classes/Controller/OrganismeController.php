@@ -1,6 +1,7 @@
 <?php
 namespace VFVC\VfvcAnnuairevfvc\Controller;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -28,18 +29,18 @@ namespace VFVC\VfvcAnnuairevfvc\Controller;
  ***************************************************************/
 
 /**
- * ContactController
+ * OrganismeController
  */
-class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * contactRepository
+     * organismeRepository
      *
-     * @var \VFVC\VfvcAnnuairevfvc\Domain\Repository\ContactRepository
+     * @var \VFVC\VfvcAnnuairevfvc\Domain\Repository\OrganismeRepository
      * @inject
      */
-    protected $contactRepository = NULL;
+    protected $organismeRepository = NULL;
     
     /**
      * action list
@@ -48,29 +49,19 @@ class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function listAction()
     {
-        $contacts = $this->contactRepository->findAll();
-        $this->view->assign('contacts', $contacts);
+        $organismes = $this->organismeRepository->findAll();
+        $this->view->assign('organismes', $organismes);
     }
     
     /**
      * action show
      *
-     * @param \VFVC\VfvcAnnuairevfvc\Domain\Model\Contact $contact
+     * @param \VFVC\VfvcAnnuairevfvc\Domain\Model\Organisme $organisme
      * @return void
      */
-    public function showAction(\VFVC\VfvcAnnuairevfvc\Domain\Model\Contact $contact)
+    public function showAction(\VFVC\VfvcAnnuairevfvc\Domain\Model\Organisme $organisme)
     {
-        $this->view->assign('contact', $contact);
-    }
-    
-    /**
-     * action search
-     *
-     * @return void
-     */
-    public function searchAction()
-    {
-        
+        $this->view->assign('organisme', $organisme);
     }
 
 }

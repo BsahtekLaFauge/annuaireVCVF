@@ -26,22 +26,22 @@ namespace VFVC\VfvcAnnuairevfvc\Tests\Unit\Controller;
  ***************************************************************/
 
 /**
- * Test case for class VFVC\VfvcAnnuairevfvc\Controller\ContactController.
+ * Test case for class VFVC\VfvcAnnuairevfvc\Controller\OrganismeController.
  *
  * @author Valentin Faugier <valentinfaugier@gmail.com>
  * @author Vincent Cousin <vincent.cousin3@gmail.com>
  */
-class ContactControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class OrganismeControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 
 	/**
-	 * @var \VFVC\VfvcAnnuairevfvc\Controller\ContactController
+	 * @var \VFVC\VfvcAnnuairevfvc\Controller\OrganismeController
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = $this->getMock('VFVC\\VfvcAnnuairevfvc\\Controller\\ContactController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+		$this->subject = $this->getMock('VFVC\\VfvcAnnuairevfvc\\Controller\\OrganismeController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
 	public function tearDown()
@@ -52,17 +52,17 @@ class ContactControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function listActionFetchesAllContactsFromRepositoryAndAssignsThemToView()
+	public function listActionFetchesAllOrganismesFromRepositoryAndAssignsThemToView()
 	{
 
-		$allContacts = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+		$allOrganismes = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
 
-		$contactRepository = $this->getMock('VFVC\\VfvcAnnuairevfvc\\Domain\\Repository\\ContactRepository', array('findAll'), array(), '', FALSE);
-		$contactRepository->expects($this->once())->method('findAll')->will($this->returnValue($allContacts));
-		$this->inject($this->subject, 'contactRepository', $contactRepository);
+		$organismeRepository = $this->getMock('VFVC\\VfvcAnnuairevfvc\\Domain\\Repository\\OrganismeRepository', array('findAll'), array(), '', FALSE);
+		$organismeRepository->expects($this->once())->method('findAll')->will($this->returnValue($allOrganismes));
+		$this->inject($this->subject, 'organismeRepository', $organismeRepository);
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
-		$view->expects($this->once())->method('assign')->with('contacts', $allContacts);
+		$view->expects($this->once())->method('assign')->with('organismes', $allOrganismes);
 		$this->inject($this->subject, 'view', $view);
 
 		$this->subject->listAction();
@@ -71,14 +71,14 @@ class ContactControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function showActionAssignsTheGivenContactToView()
+	public function showActionAssignsTheGivenOrganismeToView()
 	{
-		$contact = new \VFVC\VfvcAnnuairevfvc\Domain\Model\Contact();
+		$organisme = new \VFVC\VfvcAnnuairevfvc\Domain\Model\Organisme();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
-		$view->expects($this->once())->method('assign')->with('contact', $contact);
+		$view->expects($this->once())->method('assign')->with('organisme', $organisme);
 
-		$this->subject->showAction($contact);
+		$this->subject->showAction($organisme);
 	}
 }
